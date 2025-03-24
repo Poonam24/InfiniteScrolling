@@ -11,7 +11,7 @@ import SwiftUI
 struct InfiniteSearchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(searchString: "Dog")
+            ContentView(searchString: "dogs")
         }
     }
 }

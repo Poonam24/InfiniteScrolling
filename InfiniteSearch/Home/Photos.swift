@@ -28,12 +28,15 @@
        },
  */
 
-struct Photos:Codable {
+
+import Foundation
+
+struct Photos:Codable, Hashable {
     var photos: Photo
 }
 
 
-struct Photo : Codable {
+struct Photo : Codable, Hashable {
     var page: Int
     var pages: Int
     var perpage: Int
@@ -41,8 +44,8 @@ struct Photo : Codable {
     var photo : [NestedPhoto]
 }
 
-struct NestedPhoto: Codable, Identifiable, Sendable {
-    var id: String
+struct NestedPhoto: Codable, Hashable {
+   var id: String
     var owner: String
     var secret: String
     var server: String
@@ -52,7 +55,7 @@ struct NestedPhoto: Codable, Identifiable, Sendable {
     var isfriend: Int
     var isfamily: Int
     var url_s: String
-    var height_s: Int
-    var width_s: Int
+    var height_s: CGFloat
+    var width_s: CGFloat
     
 }
